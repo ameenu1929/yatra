@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Travel Planner AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Input Form Section -->
+        <div id="inputSection" class="section active">
+            <div class="header">
+                <h1>🌏 India Travel Planner AI</h1>
+                <p>Plan your perfect Indian adventure!</p>
+            </div>
+
+            <form id="travelForm">
+                <div class="form-group">
+                    <label>💰 Budget (₹)</label>
+                    <div class="slider-container">
+                        <input type="range" id="budget" min="5000" max="500000" value="50000" step="5000">
+                        <span class="slider-value" id="budgetValue">₹50,000</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>📅 Number of Days</label>
+                    <div class="slider-container">
+                        <input type="range" id="days" min="1" max="30" value="5">
+                        <span class="slider-value" id="daysValue">5 days</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>👥 Number of Members</label>
+                    <div class="slider-container">
+                        <input type="range" id="members" min="1" max="20" value="2">
+                        <span class="slider-value" id="membersValue">2 people</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>🏙️ Starting City</label>
+                    <input type="text" id="startCity" placeholder="e.g., Mumbai, Delhi, Bangalore" required>
+                </div>
+
+                <div class="form-group">
+                    <label>👫 Travel Type</label>
+                    <div class="button-group">
+                        <button type="button" class="option-btn" data-value="solo">🧍 Solo</button>
+                        <button type="button" class="option-btn" data-value="friends">👯 Friends</button>
+                        <button type="button" class="option-btn" data-value="family">👨‍👩‍👧‍👦 Family</button>
+                    </div>
+                    <input type="hidden" id="travelType" required>
+                </div>
+
+                <div class="form-group">
+                    <label>🎯 Preferences (Select multiple)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="hill"> 🏔️ Hill Stations
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="adventure"> 🪂 Adventure
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="romantic"> 💑 Romantic
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="nature"> 🌿 Eco/Nature
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="cultural"> 🕌 Cultural
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="beach"> 🏖️ Beach
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">✨ Find My Perfect Trip</button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="section">
+            <div class="header">
+                <h1>🎉 Your Perfect Destinations</h1>
+                <button id="backBtn" class="back-btn">← Back to Search</button>
+            </div>
+            <div id="destinationsList"></div>
+        </div>
+
+        <!-- Destination Details Section -->
+        <div id="detailsSection" class="section">
+            <button id="backToListBtn" class="back-btn">← Back to List</button>
+            <div id="destinationDetails"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
